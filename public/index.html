@@ -1,0 +1,196 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management System</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="dashboard">
+
+        <aside class="sidebar">
+            <div class="logo">
+                <div class="logo-icon">S</div>
+                <h2>StudentHub</h2>
+            </div>
+
+            <p class="menu-heading">MAIN MENU</p>
+
+            <nav>
+                <a href="#" class="nav-link active">
+                    <span>▦</span> Dashboard
+                </a>
+                <a href="#student-form" class="nav-link">
+                    <span>＋</span> Add Student
+                </a>
+                <a href="#student-list" class="nav-link">
+                    <span>▤</span> Student Records
+                </a>
+            </nav>
+
+            <div class="sidebar-bottom">
+                <p>Student Management System</p>
+                <small>Web Development Minor Project</small>
+            </div>
+        </aside>
+
+        <main class="main-content">
+
+            <header class="topbar">
+                <div>
+                    <h1>Dashboard</h1>
+                    <p>Manage your student records easily.</p>
+                </div>
+                <div class="admin-profile">
+                    <div class="avatar">A</div>
+                    <div>
+                        <strong>Administrator</strong>
+                        <small>Admin Panel</small>
+                    </div>
+                </div>
+            </header>
+
+            <section class="welcome">
+                <div>
+                    <h2>Welcome to StudentHub!</h2>
+                    <p>Keep track of student information in one place.</p>
+                </div>
+                <span class="welcome-icon">🎓</span>
+            </section>
+
+            <section class="stats">
+                <div class="stat-card">
+                    <div class="stat-icon purple">♙</div>
+                    <div>
+                        <p>Total Students</p>
+                        <h2 id="totalStudents">0</h2>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon blue">▤</div>
+                    <div>
+                        <p>Departments</p>
+                        <h2 id="totalDepartments">0</h2>
+                    </div>
+                </div>
+            </section>
+
+            <section class="form-section" id="student-form">
+                <div class="section-heading">
+                    <div>
+                        <h2 id="formTitle">Add New Student</h2>
+                        <p>Enter the student's details below.</p>
+                    </div>
+                </div>
+
+                <form id="studentForm">
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+                            <label>Student Name</label>
+                            <input type="text" id="name" placeholder="Enter full name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Register Number</label>
+                            <input type="text" id="registerNumber" placeholder="Enter register number" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Department</label>
+                            <select id="department" required>
+                                <option value="">Select Department</option>
+                                <option value="Artificial Intelligence and Data Science">AI & Data Science</option>
+                                <option value="Computer Science and Engineering">Computer Science</option>
+                                <option value="Information Technology">Information Technology</option>
+                                <option value="Electronics and Communication Engineering">ECE</option>
+                                <option value="Mechanical Engineering">Mechanical Engineering</option>
+                                <option value="Electrical and Electronics Engineering">EEE</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Academic Year</label>
+                            <select id="year" required>
+                                <option value="">Select Year</option>
+                                <option value="1st Year">1st Year</option>
+                                <option value="2nd Year">2nd Year</option>
+                                <option value="3rd Year">3rd Year</option>
+                                <option value="4th Year">4th Year</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Email Address</label>
+                            <input type="email" id="email" placeholder="student@example.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Phone Number</label>
+                            <input type="tel" id="phone" placeholder="Enter phone number" pattern="[0-9]{10}" required>
+                        </div>
+
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="reset" class="reset-btn" id="resetBtn">Clear</button>
+                        <button type="submit" class="submit-btn" id="submitBtn">＋ Add Student</button>
+                    </div>
+
+                </form>
+            </section>
+
+            <section class="table-section" id="student-list">
+
+                <div class="section-heading">
+                    <div>
+                        <h2>Student Records</h2>
+                        <p>View and manage all registered students.</p>
+                    </div>
+
+                    <input type="text" id="searchInput" placeholder="Search students...">
+                </div>
+
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Register No.</th>
+                                <th>Department</th>
+                                <th>Year</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="studentTableBody">
+                            <tr>
+                                <td colspan="7" class="empty-message">Loading student records...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </section>
+
+            <footer>
+                StudentHub | Web Development Minor Project
+            </footer>
+
+        </main>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
